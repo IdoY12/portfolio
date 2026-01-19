@@ -1,0 +1,84 @@
+<section class="projects section" id="projects">
+  <div class="container">
+    <h2 class="section-title" @fadeInUp>Projects</h2>
+    <p class="section-subtitle" @fadeInUp>Some of my recent work and side projects</p>
+    
+    <!-- Technology Filter -->
+    @if (allTechnologies.length > 1) {
+      <div class="tech-filter" @fadeInUp>
+        @for (tech of allTechnologies; track tech) {
+          <button
+            class="tech-filter-btn"
+            [class.active]="selectedTech === tech"
+            (click)="selectTech(tech)"
+            [attr.aria-pressed]="selectedTech === tech">
+            {{ tech }}
+          </button>
+        }
+      </div>
+    }
+    
+    <!-- Projects Grid -->
+    <div class="projects-grid" @fadeInUp>
+      @for (project of filteredProjects; track project.id) {
+        <div class="project-card">
+          <div class="project-image" (click)="openImageModal(project.image)" role="button" tabindex="0" (keydown.enter)="openImageModal(project.image)" (keydown.space)="openImageModal(project.image); $event.preventDefault()">
+            <img 
+              [src]="project.image" 
+              [alt]="project.title + ' project screenshot'"
+              loading="lazy">
+            <div class="project-overlay">
+              <div class="project-links">
+                @if (project.links.demo) {
+                  <app-button 
+                    variant="primary" 
+                    size="sm"
+                    [href]="project.links.demo"
+                    target="_blank"
+                    ariaLabel="View live demo of {{ project.title }}"
+                    (click)="$event.stopPropagation()">
+                    Demo
+                  </app-button>
+                }
+                @if (project.links.github) {
+                  <app-button 
+                    variant="outline" 
+                    size="sm"
+                    [href]="project.links.github"
+                    target="_blank"
+                    ariaLabel="View source code of {{ project.title }} on GitHub"
+                    (click)="$event.stopPropagation()">
+                    GitHub
+                  </app-button>
+                }
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-content">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+            
+            <div class="project-technologies">
+              @for (tech of project.technologies; track tech) {
+                <span class="tech-badge">{{ tech }}</span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+  
+  <!-- Image Modal -->
+  @if (isModalOpen) {
+    <div class="image-modal" (click)="closeImageModal()" role="dialog" aria-modal="true" aria-label="Enlarged project image">
+      <button class="modal-close" (click)="closeImageModal()" aria-label="Close image modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+      <img [src]="modalImageUrl" [alt]="'Enlarged project screenshot'" (click)="$event.stopPropagation()">
+    </div>
+  }
+</section>

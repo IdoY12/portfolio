@@ -1,0 +1,41 @@
+<section class="tech-stack section" id="tech-stack">
+  <div class="container">
+    <h2 class="section-title" @fadeInUp>Tech Stack</h2>
+    <p class="section-subtitle" @fadeInUp>Technologies and tools I work with</p>
+    
+    <!-- Category Filter -->
+    <div class="category-filter" @fadeInUp>
+      @for (category of categories; track category) {
+        <button
+          class="category-btn"
+          [class.active]="selectedCategory === category"
+          (click)="selectCategory(category)"
+          [attr.aria-pressed]="selectedCategory === category">
+          {{ category }}
+        </button>
+      }
+    </div>
+    
+    <!-- Tech Stack Grid - Icon Based Design -->
+    <div class="tech-grid" @fadeInUp>
+      @for (tech of filteredTechStack; track tech.name) {
+        <div class="tech-icon-card" 
+             [attr.data-tech]="tech.name.toLowerCase()"
+             [attr.data-category]="tech.category.toLowerCase()">
+          <div class="icon-wrapper">
+            <img 
+              [src]="'https://skillicons.dev/icons?i=' + getIconName(tech.icon)"
+              [alt]="tech.name + ' icon'"
+              class="tech-icon-img"
+              loading="lazy"
+              (error)="handleImageError($event)">
+            <div class="icon-fallback" style="display: none;">
+              <span class="icon-text">{{ tech.name.charAt(0) }}</span>
+            </div>
+          </div>
+          <span class="tech-name">{{ tech.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

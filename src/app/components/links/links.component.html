@@ -1,0 +1,26 @@
+<footer class="links section" id="links">
+  <div class="container">
+    <h2 class="section-title" @fadeInUp>Let's Connect</h2>
+    <p class="section-subtitle" @fadeInUp>Feel free to reach out for collaborations or just to say hello</p>
+    
+    <div class="social-badges" @fadeInUp>
+      @for (link of socialLinks; track link.platform) {
+        <a
+          [href]="link.url"
+          [attr.aria-label]="link.label"
+          [target]="link.platform === 'Email' || link.platform === 'Phone' ? '_self' : '_blank'"
+          rel="noopener noreferrer"
+          class="social-badge"
+          [class]="'badge-' + link.icon">
+          <span class="badge-icon">{{ getBadgeIcon(link.icon) }}</span>
+          <span class="badge-label">{{ link.platform }}</span>
+        </a>
+      }
+    </div>
+    
+    <div class="footer-credits" @fadeInUp>
+      <p>&copy; {{ currentYear }} {{ portfolioName }}. All rights reserved.</p>
+      <p class="footer-note">Built with <span class="heart">❤️</span> using Angular</p>
+    </div>
+  </div>
+</footer>

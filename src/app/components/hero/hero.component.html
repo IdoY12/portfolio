@@ -1,0 +1,42 @@
+<section class="hero" id="hero">
+  <div class="hero-background">
+    <div class="gradient-mesh"></div>
+    <div class="animated-gradient"></div>
+    <div class="particles">
+      @for (i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]; track i) {
+        <div class="particle" [style.animation-delay.s]="i * 0.2"></div>
+      }
+    </div>
+  </div>
+  
+  <div class="hero-content container">
+    <div class="hero-text" @fadeInUp>
+      @if (heroData.image) {
+        <div class="hero-image">
+          <img [src]="heroData.image" [alt]="heroData.name + ' profile picture'" loading="eager">
+        </div>
+      }
+      
+      <h1 class="hero-name">
+        <span class="gradient-text">{{ heroData.name }}</span>
+      </h1>
+      <h2 class="hero-title">{{ heroData.title }}</h2>
+      <div class="hero-tagline-wrapper">
+        <p class="hero-tagline">
+          <span class="typing-text">{{ displayedText }}</span>
+          <span class="cursor" [class.blink]="displayedText.length < fullText.length">|</span>
+        </p>
+      </div>
+    </div>
+    
+    <button 
+      class="scroll-indicator" 
+      (click)="scrollToNext()"
+      aria-label="Scroll to next section"
+      @fadeIn>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 9l6 6 6-6"/>
+      </svg>
+    </button>
+  </div>
+</section>

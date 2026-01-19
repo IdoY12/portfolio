@@ -1,0 +1,261 @@
+/**
+ * Global Styles
+ * CUSTOMIZE: Adjust CSS variables to match your preferred color scheme
+ */
+
+// ============================================
+// CSS Variables - Color Scheme
+// CUSTOMIZE: Change these values to customize the theme
+// ============================================
+:root {
+  // Primary Colors - Tokyo Night inspired with Cyan accent
+  --color-primary: #00E5FF; // Vibrant cyan
+  --color-primary-dark: #00B8D4;
+  --color-primary-light: #4DD0E1;
+  --color-primary-glow: rgba(0, 229, 255, 0.4);
+  
+  // Background Colors - Tokyo Night
+  --color-bg-primary: #0D1117;
+  --color-bg-secondary: #161B22;
+  --color-bg-tertiary: #1F2937;
+  --color-bg-card: #1F2937;
+  --color-bg-card-hover: #273549;
+  
+  // Text Colors
+  --color-text-primary: #c9d1d9;
+  --color-text-secondary: #8b949e;
+  --color-text-tertiary: #6e7681;
+  
+  // Border Colors
+  --color-border: #30363d;
+  --color-border-light: #484f58;
+  --color-border-glow: rgba(0, 229, 255, 0.3);
+  
+  // Accent Colors
+  --color-accent: #00E5FF; // Cyan
+  --color-success: #3fb950; // Green
+  --color-warning: #d29922; // Amber
+  --color-error: #f85149; // Red
+  
+  // Gradients - Animated and vibrant
+  --gradient-primary: linear-gradient(135deg, #00E5FF 0%, #4DD0E1 50%, #00B8D4 100%);
+  --gradient-hero: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #0D1117 100%);
+  --gradient-animated: linear-gradient(270deg, #00E5FF, #4DD0E1, #00B8D4, #00E5FF);
+  --gradient-mesh: radial-gradient(at 0% 0%, rgba(0, 229, 255, 0.1) 0%, transparent 50%),
+                    radial-gradient(at 100% 0%, rgba(77, 208, 225, 0.1) 0%, transparent 50%),
+                    radial-gradient(at 100% 100%, rgba(0, 184, 212, 0.1) 0%, transparent 50%),
+                    radial-gradient(at 0% 100%, rgba(0, 229, 255, 0.1) 0%, transparent 50%);
+  
+  // Spacing
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 4rem;
+  --spacing-2xl: 6rem;
+  
+  // Typography
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Courier New', monospace;
+  
+  // Font Sizes
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 4rem;
+  
+  // Transitions
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  
+  // Shadows
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 20px rgba(0, 229, 255, 0.4);
+  --shadow-glow-strong: 0 0 30px rgba(0, 229, 255, 0.6);
+  --shadow-cyan: 0 0 15px rgba(0, 229, 255, 0.3);
+  
+  // Border Radius
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+  
+  // Z-index layers
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 300;
+  --z-tooltip: 400;
+}
+
+// ============================================
+// Reset & Base Styles
+// ============================================
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ============================================
+// Typography
+// ============================================
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: var(--font-size-5xl);
+  
+  @media (max-width: 768px) {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+h2 {
+  font-size: var(--font-size-4xl);
+  
+  @media (max-width: 768px) {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+h3 {
+  font-size: var(--font-size-3xl);
+  
+  @media (max-width: 768px) {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+  
+  &:hover {
+    color: var(--color-primary-light);
+  }
+}
+
+// ============================================
+// Utility Classes
+// ============================================
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  
+  @media (max-width: 768px) {
+    padding: 0 var(--spacing-sm);
+  }
+}
+
+.section {
+  padding: var(--spacing-2xl) 0;
+  position: relative;
+  
+  @media (max-width: 768px) {
+    padding: var(--spacing-xl) 0;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// ============================================
+// Scrollbar Styling
+// ============================================
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  
+  &:hover {
+    background: var(--color-border-light);
+  }
+}
+
+// ============================================
+// Scroll Animation Styles
+// ============================================
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  
+  &.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ============================================
+// Print Styles
+// ============================================
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+}
