@@ -80,7 +80,7 @@ export const projectsData: Project[] = [
   {
     id: 'project-1',
     title: 'ShopiSense (Shopify - SaaS)',
-    description: 'ShopiSense is an MCP-based SaaS platform for Shopify that delivers real-time, behavior-driven personalization, remembering returning users and adapting products and content based on their preferences over time',
+    description: 'ShopiSense is an MCP-based SaaS platform for Shopify that transforms static online stores into adaptive experiences. It analyzes real-time user behavior, remembers returning visitors, and dynamically personalizes products and content based on each shopper’s evolving preferences — increasing relevance, engagement, and conversion. Behind the scenes, it functions like a quiet digital sales assistant, continuously learning from user interactions and improving the shopping experience in a positive, user-centric way, without the customer ever being consciously aware of it.',
     image: 'assets/images/ShopiSense.jpeg',
     technologies: [
       'Python',
