@@ -200,7 +200,7 @@ export const projectsData: Project[] = [
     id: 'project-codequest',
     title: 'CodeQuest JS',
     description: 'CodeQuest JS is a full-stack gamified mobile learning platform for iPhone that teaches JavaScript, HTML, and CSS through interactive challenges. Features a structured curriculum with adaptive difficulty based on user experience level, six exercise types including drag-and-drop code building and live bug detection, and a real-time 1v1 competitive Duel Mode that matches players worldwide via WebSockets for timed JS challenges.',
-    image: 'assets/images/mcp_files.png',
+    image: 'assets/images/CodeQuest_JS.png',
     technologies: [
       'React Native',
       'Expo',
