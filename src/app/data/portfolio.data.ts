@@ -197,16 +197,25 @@ export const projectsData: Project[] = [
     }
   },
   {
-    id: 'project-4',
-    title: 'FileScope MCP',
-    description: 'Local File Management MCP Server is an MCP-based backend service that enables secure, scoped file system operations (list, read, write) within a local project directory, allowing AI agents to interact with project files safely and programmatically.',
+    id: 'project-codequest',
+    title: 'CodeQuest JS',
+    description: 'CodeQuest JS is a full-stack gamified mobile learning platform for iPhone that teaches JavaScript, HTML, and CSS through interactive challenges. Features a structured curriculum with adaptive difficulty based on user experience level, six exercise types including drag-and-drop code building and live bug detection, and a real-time 1v1 competitive Duel Mode that matches players worldwide via WebSockets for timed JS challenges.',
     image: 'assets/images/mcp_files.png',
     technologies: [
-      'Python',
-      'FastMCP',
-      'Model Context Protocol (MCP)',
-      'Local File System APIs',
-      'Claude Desktop / Claude Code Integration'
+      'React Native',
+      'Expo',
+      'TypeScript',
+      'Node.js (Express)',
+      'PostgreSQL',
+      'Prisma ORM',
+      'Socket.IO',
+      'Zustand',
+      'React Query',
+      'React Navigation',
+      'Reanimated',
+      'JWT Authentication',
+      'Zod',
+      'Docker',
     ],
     links: {
       demo: '',
