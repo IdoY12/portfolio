@@ -82,6 +82,7 @@ export class TechStackComponent implements OnInit {
       'vite': 'vite',
       'npm': 'npm',
       'api': 'fastapi',
+      'graphql': 'graphql',
       'vscode': 'vscode',
       'postman': 'postman'
     };

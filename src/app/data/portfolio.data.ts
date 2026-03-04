@@ -54,6 +54,7 @@ export const techStackData: TechStackItem[] = [
   // APIs
   { name: 'REST APIs', icon: 'api', category: 'Other', proficiency: 85 },
   { name: 'MCP-based APIs', icon: 'api', category: 'Other', proficiency: 65 },
+  { name: 'GraphQL', icon: 'graphql', category: 'Other', proficiency: 65 },
 
   // Development Tools
   { name: 'VS Code', icon: 'vscode', category: 'Tools', proficiency: 85 },
